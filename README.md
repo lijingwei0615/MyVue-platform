@@ -1,5 +1,7 @@
-# myvuw
+# vue_xinguan
 
+## 登录账号16301148
+## 密码123
 ## Project setup
 ```
 npm install
