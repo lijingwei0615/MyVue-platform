@@ -5,9 +5,5 @@ const instance = axios.create({
     timeout: 3000
 });
 
-<<<<<<< HEAD
 
 export default instance;
-=======
-export default instance;
->>>>>>> test_1
