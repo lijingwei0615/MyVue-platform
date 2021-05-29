@@ -26,6 +26,9 @@ import '../components/css/LeftMenu.css'
           <span>数据管理</span>
         </template>
         <el-menu-item index="/components/views/userinfo">资源文件管理</el-menu-item>
+        <el-menu-item index="/personalCsv"><i class="el-icon-menu"></i>郭源-接口8</el-menu-item>
+        <el-menu-item index="/othersCsv"><i class="el-icon-menu"></i>郭源-接口9</el-menu-item>
+        <el-menu-item index="3-2"><i class="el-icon-menu"></i>用户数据管理</el-menu-item>
         <el-menu-item index="3-2"><i class="el-icon-menu"></i>用户数据管理</el-menu-item>
         <el-menu-item index="3-3"><i class="el-icon-s-check"></i>参数数据管理</el-menu-item>
         <el-menu-item index="3-4"><i class="el-icon-s-claim"></i>系统日志管理</el-menu-item>

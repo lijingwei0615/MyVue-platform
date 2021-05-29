@@ -6,6 +6,8 @@ import userinfo from "@/components/views/userinfo";
 import changeinfo from "@/components/views/changeinfo";
 import Login from "@/components/views/Login";
 import Register from "@/components/views/Register";
+import PersonalCsv from "@/components/views/PersonalCsv";
+import OthersCsv from "@/components/views/OthersCsv"
 const routes = [{
     path: '/',
     redirect: '/login'
@@ -21,11 +23,21 @@ const routes = [{
         component: () =>
             import ('../components/views/userinfo.vue')
     },
-        {
+    {
         path: '/changeinfo',
         name: 'changeinfo',
         component: () =>
             import ('../components/views/changeinfo.vue')
+    },
+    {
+        path: '/personalCsv',
+        name: 'personalCsv',
+        component:PersonalCsv
+    },
+    {
+        path: '/othersCsv',
+        name: 'othersCsv',
+        component:OthersCsv
     }
     ]
 }, {

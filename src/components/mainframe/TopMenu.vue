@@ -11,8 +11,6 @@ import userinfo from '@/components/views/userinfo';
                class="el-menu-demo"
                mode="horizontal"
                text-color="#ffffff"
-
-
       >
         <el-menu-item>
           <el-dropdown  @command="handleCommand">
