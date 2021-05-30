@@ -1,5 +1,6 @@
 <template>
   <div class="login-register">
+
     <div class="contain">
       <div class="big-box" :class="{active:isLogin}">
         <div class="big-contain" v-if="isLogin">
@@ -155,10 +156,13 @@ export default{
 }
 </script>
 
+
+
 <style scoped="scoped">
 .login-register{
   width: 100vw;
   height: 100vh;
+  /*background: url("../../../src/images/LoginBackground.jpeg");*/
   box-sizing: border-box;
 }
 .contain{
@@ -168,10 +172,10 @@ export default{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 20px;
-  box-shadow: 0 0 3px #f0f0f0,
-  0 0 6px #f0f0f0;
+  /*box-shadow: 0 0 3px #f0f0f0,*/
+  /*0 0 6px #f0f0f0;*/
 }
 .big-box{
   width: 70%;
@@ -193,7 +197,7 @@ export default{
 .btitle{
   font-size: 1.5em;
   font-weight: bold;
-  color: rgb(57,167,176);
+  color: rgb(72,89,209);
 }
 .bform{
   width: 100%;
@@ -227,7 +231,7 @@ export default{
   border-radius: 24px;
   border: none;
   outline: none;
-  background-color: rgb(57,167,176);
+  background-color: rgb(72,89,209);
   color: #fff;
   font-size: 0.9em;
   cursor: pointer;
@@ -235,7 +239,7 @@ export default{
 .small-box{
   width: 30%;
   height: 100%;
-  background: linear-gradient(135deg,rgb(57,167,176),rgb(56,183,145));
+  background: linear-gradient(135deg,rgb(72,89,209),rgb(56,183,145));
   position: absolute;
   top: 0;
   left: 0;
@@ -251,6 +255,7 @@ export default{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 }
 .stitle{
   font-size: 1.5em;

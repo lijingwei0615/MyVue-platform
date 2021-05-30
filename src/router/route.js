@@ -5,7 +5,6 @@ import layout from "@/components/mainframe/layout";
 import userinfo from "@/components/views/userinfo";
 import changeinfo from "@/components/views/changeinfo";
 import Login from "@/components/views/Login";
-import Register from "@/components/views/Register";
 import PersonalCsv from "@/components/views/PersonalCsv";
 import OthersCsv from "@/components/views/OthersCsv"
 const routes = [{
@@ -38,19 +37,19 @@ const routes = [{
         path: '/othersCsv',
         name: 'othersCsv',
         component:OthersCsv
-    }
+    },
+        {path: '/calculate',
+            name: 'calculate',
+            component: () =>
+                import ('../components/views/calculate.vue')
+        },
     ]
 }, {
         path: '/login',
         name: 'login-register',
         component: Login
     },
-    {
-        path: '/register',
-        name: 'Register',
 
-        component:Register
-    },
 
 
 

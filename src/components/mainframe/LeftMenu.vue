@@ -19,6 +19,7 @@ import '../components/css/LeftMenu.css'
         </template>
         <el-menu-item index="/userinfo"><i class="el-icon-s-custom"></i>查看用户资料</el-menu-item>
         <el-menu-item index="/changeinfo"><i class="el-icon-menu"></i>修改用户信息</el-menu-item>
+        <el-menu-item index="/changePassword"><i class="el-icon-menu"></i>修改密码</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">
@@ -38,7 +39,7 @@ import '../components/css/LeftMenu.css'
           <i class="el-icon-setting"></i>
           <span>计算资源管理</span>
         </template>
-        <el-menu-item index="4-1"><i class="el-icon-s-custom"></i>计算资源申请</el-menu-item>
+        <el-menu-item index="/calculate"><i class="el-icon-s-custom"></i>计算资源申请</el-menu-item>
         <el-menu-item index="4-2"><i class="el-icon-menu"></i>计算资源分配</el-menu-item>
         <el-menu-item index="4-3"><i class="el-icon-s-check"></i>重启计算节点</el-menu-item>
         <el-menu-item index="4-4"><i class="el-icon-s-claim"></i>系统日志管理</el-menu-item>
