@@ -39,9 +39,9 @@ import '../components/css/LeftMenu.css'
           <i class="el-icon-setting"></i>
           <span>计算资源管理</span>
         </template>
-        <el-menu-item index="/calculate"><i class="el-icon-s-custom"></i>计算资源申请</el-menu-item>
-        <el-menu-item index="4-2"><i class="el-icon-menu"></i>计算资源分配</el-menu-item>
-        <el-menu-item index="4-3"><i class="el-icon-s-check"></i>重启计算节点</el-menu-item>
+        <el-menu-item index="/calculate"><i class="el-icon-s-custom"></i>接口12,10</el-menu-item>
+        <el-menu-item index="/update"><i class="el-icon-menu"></i>接口11</el-menu-item>
+        <el-menu-item index="/add"><i class="el-icon-s-check"></i>接口13</el-menu-item>
         <el-menu-item index="4-4"><i class="el-icon-s-claim"></i>系统日志管理</el-menu-item>
       </el-submenu>
       <el-submenu index="5">

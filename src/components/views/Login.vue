@@ -83,24 +83,7 @@ export default{
             password: self.form.userpwd
           }
         })
-            // .then( res => {
-            //   switch(res.data){
-            //     case 0:{
-            //       alert("登陆成功！");
-            //       self.$router.push('/layout');
-            //       break;
-            //     }
-            //     case -1:
-            //       this.emailError = true;
-            //       break;
-            //     case 1:
-            //       this.passwordError = true;
-            //       break;
-            //   }
-            // })
-            // .catch( err => {
-            //   console.log(err);
-            // })
+
             .then(function(response){
 
               if((response.data).stateCode==3000){
