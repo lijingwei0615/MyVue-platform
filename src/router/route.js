@@ -38,6 +38,18 @@ const routes = [{
         name: 'othersCsv',
         component:OthersCsv
     },
+        {
+            path:'/uploadCsvData',
+            name:'/uploadCsvData',
+            component:()=>
+                import('../components/views/uploadCsvData.vue')
+        },
+        {
+            path:'/GetDetailinfo',
+            name:'/GetDetailinfo',
+            component:()=>
+                import('../components/views/GetDetailinfo.vue')
+        },
         {path: '/add',
             name: 'add',
             component: () =>
