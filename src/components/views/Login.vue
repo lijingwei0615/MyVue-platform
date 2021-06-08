@@ -3,7 +3,7 @@
 
     <div class="contain">
       <div class="big-box" :class="{active:isLogin}">
-        <div class="big-contain" v-if="isLogin">
+        <div class="big-contain" v-if="!isLogin">
           <div class="btitle">账户登录</div>
           <div class="bform">
             <input type="email" placeholder="用户ID" v-model="form.useremail">
@@ -32,12 +32,12 @@
         <div class="small-contain" v-if="isLogin">
           <div class="stitle">你好，朋友!</div>
           <p class="scontent">开始注册，和我们一起旅行</p>
-          <button class="sbutton" @click="changeType">注册</button>
+          <button class="sbutton" @click="changeType">登录</button>
         </div>
         <div class="small-contain" v-else>
           <div class="stitle">欢迎回来!</div>
           <p class="scontent">与我们保持联系，请登录你的账户</p>
-          <button class="sbutton" @click="changeType">登录</button>
+          <button class="sbutton" @click="changeType">注册</button>
         </div>
       </div>
     </div>
@@ -75,16 +75,22 @@ export default{
     login() {
       const self = this;
       if (self.form.useremail != "" && self.form.userpwd != "") {
+        var jsonStr1={
+          "userId": self.form.useremail,
+          "password": self.form.userpwd
+        }
         self.$axios({
-          method:'post',
-          url: 'http://8.140.100.205:8090/user/login',
-          data: {
-            userId: self.form.useremail,
-            password: self.form.userpwd
-          }
-        })
+          //async: false,
+          url: 'http://8.140.100.205:8090/api/user/login',
+          method: 'POST',
 
-            .then(function(response){
+
+          headers:{
+            'Content-Type':'application/x-www-form-urlencoded'
+          },
+
+          //dataType: 'json',
+          params : jsonStr1,}).then(function(response){
 
               if((response.data).stateCode==3000){
                 alert("登录成功！");
@@ -106,7 +112,7 @@ export default{
       if(self.form.username != ""  && self.form.userpwd != ""){
         self.$axios({
           method:'post',
-          url: 'http://8.140.100.205:8090/user/register',
+          url: 'http://8.140.100.205:8090/api/user/register',
           data: {
             username: self.form.username,
             password: self.form.userpwd,
@@ -145,7 +151,7 @@ export default{
 .login-register{
   width: 100vw;
   height: 100vh;
-  /*background: url("../../../src/images/LoginBackground.jpeg");*/
+  background: url("../../../src/images/LoginBackground.jpeg");
   box-sizing: border-box;
 }
 .contain{
@@ -157,12 +163,12 @@ export default{
   transform: translate(-50%,-50%);
   background-color: transparent;
   border-radius: 20px;
-  /*box-shadow: 0 0 3px #f0f0f0,*/
-  /*0 0 6px #f0f0f0;*/
+  box-shadow: 0 0 3px #f0f0f0,
+  0 0 6px #f0f0f0;
 }
 .big-box{
   width: 70%;
-  height: 100%;
+  height: 90%;
   position: absolute;
   top: 0;
   left: 30%;
@@ -178,13 +184,14 @@ export default{
   align-items: center;
 }
 .btitle{
+  margin-top: 50px;
   font-size: 1.5em;
   font-weight: bold;
-  color: rgb(72,89,209);
+  color: rgb(255,255,255);
 }
 .bform{
   width: 100%;
-  height: 40%;
+  height: 80%;
   padding: 2em 0;
   display: flex;
   flex-direction: column;

@@ -19,7 +19,7 @@ import '../components/css/LeftMenu.css'
         </template>
         <el-menu-item index="/userinfo"><i class="el-icon-s-custom"></i>查看用户资料</el-menu-item>
         <el-menu-item index="/changeinfo"><i class="el-icon-menu"></i>修改用户信息</el-menu-item>
-        <el-menu-item index="/changePassword"><i class="el-icon-menu"></i>修改密码</el-menu-item>
+        <el-menu-item index="/modifyPassword"><i class="el-icon-menu"></i>修改密码</el-menu-item>
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">

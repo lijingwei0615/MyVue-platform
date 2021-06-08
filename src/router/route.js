@@ -28,6 +28,7 @@ const routes = [{
         component: () =>
             import ('../components/views/changeinfo.vue')
     },
+
     {
         path: '/personalCsv',
         name: 'personalCsv',
