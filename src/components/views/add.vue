@@ -1,6 +1,8 @@
 <template>
-  <el-form style="width: 60%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-
+  <el-form style="width: 100%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+    <div class="title">
+      增加用户数据列表
+    </div>
     <el-form-item label="用户ID" prop="resourceName">
       <el-input v-model="ruleForm.name"></el-input>
     </el-form-item>

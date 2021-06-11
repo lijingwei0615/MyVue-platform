@@ -28,6 +28,12 @@ const routes = [{
         component: () =>
             import ('../components/views/changeinfo.vue')
     },
+        {
+            path: '/modifyPassword',
+            name: 'modifyPassword',
+            component: () =>
+                import ('../components/views/modifyPassword.vue')
+        },
 
     {
         path: '/personalCsv',

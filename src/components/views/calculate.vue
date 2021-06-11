@@ -1,5 +1,15 @@
 <template>
   <div>
+    <div class="title">
+      获取数据列表接口
+    </div>
+    <div>
+      <div class="search">
+        <input v-model="keyword" type="text" class="searchInput"
+               placeholder="搜索ID ">
+        <el-button >搜索</el-button>
+      </div>
+    </div>
     <el-table
         :data="tableData"
         border
@@ -87,72 +97,72 @@
   </div>
 </template>
 
-<!--<script>-->
-<!--export default {-->
-<!--  data() {-->
-<!--    return {-->
-<!--      total: null,-->
-<!--      tableData: [{-->
-<!--        id: '1',-->
-<!--        resourceId: '1',-->
-<!--        bandwidth: null,-->
-<!--        memory: null,-->
-<!--        resourceLevel:null,-->
-<!--        userId:null,-->
-<!--        resourceName:'test',-->
-<!--        resourceManager:'16301148',-->
-<!--        resourceOwner:'16301148',-->
-<!--        cpu:null,-->
-<!--        ram:null,-->
-<!--        os:null-->
+<script>
+export default {
+  data() {
+    return {
+      total: null,
+      tableData: [{
+        id: null,
+        resourceId: null,
+        bandwidth: null,
+        memory: null,
+        resourceLevel: null,
+        userId: null,
+        resourceName: 'test',
+        resourceManager: '16301148',
+        resourceOwner: '16301148',
+        cpu: null,
+        ram: null,
+        os: null
 
-<!--      }-->
-<!--      ]-->
-<!--    }-->
-<!--  },-->
-<!--  // methods: {-->
-<!--  //   page(currentPage){-->
-<!--  //     const _this = this-->
-<!--  //     this.axios.get('http://8.140.100.205:8090/resource/updateResource'+currentPage+'/6',{-->
-<!--  //       params: {-->
-<!--  //         userId: 16301148,-->
-<!--  //       }}).then( (res)=> {-->
-<!--  //       _this.tableData = res.data.content-->
-<!--  //       _this.total = res.data.totalElements-->
-<!--  //     })-->
-<!--  //   },-->
-<!--  //   edit(row) {-->
-<!--  //     this.$router.push({-->
-<!--  //       path: '/update',-->
-<!--  //       query:{-->
-<!--  //         id: row.id-->
-<!--  //       }-->
-<!--  //     })-->
-<!--  //   },-->
-<!--  //   deletebook(row){-->
-<!--  //     const _this = this-->
-<!--  //     this.axios.delete('http://localhost:8181/book/deleteById/'+row.id).then( (res)=> {-->
-<!--  //       _this.$alert('《'+row.name+'》删除成功！', '消息', {-->
-<!--  //         confirmButtonText: '确定',-->
-<!--  //         callback: action => {-->
-<!--  //           window.location.reload()  //页面刷新-->
-<!--  //         }-->
-<!--  //       })-->
-<!--  //     })-->
-<!--  //   }-->
-<!--  // },-->
-<!--  created() {-->
-<!--    this.$axios.get('http://8.140.100.205:8090/resource/showResource', {-->
-<!--      params: {-->
-<!--        userId: 16301148,-->
-<!--      }}).then(function(response){-->
-<!--      console.log(response.data.data);-->
-<!--      this.tableData=response.data.data;-->
-<!--    })-->
-<!--        .catch(function(error){-->
-<!--          console.log(error);-->
-<!--        })-->
-<!--  },-->
+      }
+      ]
+    }
+  },
 
-<!--}-->
-<!--</script>-->
+  created() {
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true,
+
+    this.$axios.get('http://8.140.100.205:8090/api/resource/showResource', {
+      params: {
+        userId: 16301148,
+      }}).then(function(response){
+      console.log(response.data.data);
+      this.$set(this.tableData,0,response.data.data);
+    })
+        .catch(function(error){
+          console.log(error);
+        })
+  },
+
+}
+</script>
+
+<style>
+.title{
+  text-align:center;
+  font-size: 40px;
+}
+
+.search{
+  width:50%;
+  height :4rem;
+  background: white;
+
+}
+
+.searchInput{
+  width:70%;
+  margin-top:.5rem;
+  margin-left: 4%;
+  line-height: 2rem;
+  /*border: #ccc 1px solid;*/
+  text-align: center;
+  font-size: 18px;
+}
+
+
+
+</style>

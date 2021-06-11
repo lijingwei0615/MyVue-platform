@@ -6,7 +6,7 @@
           <span>用户资料修改</span>
         </div>
         <div>
-          <el-form label-width="80px" v-model="dataFrom" size="small" label-position="right">
+          <el-form label-width="80px" v-model="dataForm" size="small" label-position="right">
             <el-form-item label="用户名" prop="username">
               <el-input  auto-complete="off" v-model="dataForm.username"></el-input>
             </el-form-item>
@@ -27,8 +27,8 @@
             </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
-            <el-button size="mini" type="primary">提交</el-button>
-            <el-button size="mini" type="warning" >关闭</el-button>
+            <el-button size="mini" type="primary" @click="onchange">提交</el-button>
+            <el-button size="mini" type="warning" @click="back">关闭</el-button>
           </div>
         </div>
       </el-card>
@@ -39,20 +39,42 @@
 
 <script>
 
-import {changeinfo} from "@/api/changeinfo";
-
 export default {
   data(){
     return{
       dataForm:{
-        username: 'mic',
-        userId: '123',
-        sex:'男',
-        post:'123',
-        age:'18',
-        companyName:'555',
+        username: '',
+        userId: '',
+        sex:'',
+        post:'',
+        age:'',
+        companyName:'',
       }
     }
+  },
+  methods:{
+    onchange() {
+      const self = this;
+      self.$axios({
+        method: 'post',
+        url: 'http://8.140.100.205:8090/api/user/updateUserInfo',
+        data: {
+          username: self.dataForm.username,
+          userId: self.dataForm.userId,
+          sex: self.dataForm.sex,
+          post: self.dataForm.post,
+          age: self.dataForm.age,
+          companyName: self.dataForm.companyName
+        }
+      })
+      alert("修改成功！");
+      self.$router.push('/userinfo');
+    },
+    back(){
+      const self = this;
+      self.$router.push('/userinfo');
+    }
+
   }
 }
 </script>

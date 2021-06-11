@@ -1,9 +1,15 @@
 
 <template>
 <div>
+  <div class="title">
+    获取个人为创建者的数据列表
+  </div>
+  <el-input v-model="searchkey" style="width: 130px;margin-right: 15px" placeholder="请输入内容"></el-input>
+  <el-button type="primary">搜索</el-button>
   <el-table
       :data="this.tableData"
       style="width: 100%">
+
     <el-table-column
         prop="csvId"
         label="csvId"
@@ -50,36 +56,35 @@ export default {
 
   data() {
     return {
+      searchkey:'',
       tableData: [
         {
-        csvId: null,
-        csvName: 'test123',
-        csvDir:'/fxq/ftpfile',
-        csvLevel:'2',
-        userId:'16301148',
-        editor:null,
-        creator:'fxq',
-        powerLevel:'1'
-        },
-        {
-        csvId: null,
-        csvName: 'test123',
-        csvDir:'/fxq/ftpfile',
-        csvLevel:'2',
-        userId:'16301148',
-        editor:null,
-        creator:'fxq',
-        powerLevel:'1'
+          csvId: null,
+          csvName: 'test123',
+          csvDir:'/fxq/ftpfile',
+          csvLevel:'2',
+          userId:'16301148',
+          editor:null,
+          creator:'fxq',
+          powerLevel:'2'
         }
+
+
       ]
     }
   },
   created() {
     let that=this;
-    this.$axios.get('http://8.140.100.205:8090/CsvData/getPersonalCsv', {
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true,
+
+    this.$axios.get('http://8.140.100.205:8090/api/CsvData/getPersonalCsv', {
     params: {
         userId: 16301148,
-    }}).then(function(response){
+    },
+      // 前端开关：浏览器是否读写cookie
+
+    }).then(function(response){
       that.$set(that.tableData,0,response.data.data);
       // that.tableData=response.data.data;
     })
@@ -89,3 +94,9 @@ export default {
   }
 }
 </script>
+<style>
+.title{
+  text-align:center;
+  font-size: 40px;
+}
+</style>

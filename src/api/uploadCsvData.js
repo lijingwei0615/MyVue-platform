@@ -2,7 +2,7 @@ import request from '../utils/request'
 
 export const uploadCsvData = (params) => {
     return request({
-        url: "/user/uploadCsvData",
+        url: "/api/user/uploadCsvData",
         method: 'post',
         data: params,
         headers: {

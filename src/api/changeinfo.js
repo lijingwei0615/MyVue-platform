@@ -2,7 +2,7 @@ import request from '../utils/request'
 
 export const changeinfo = (params) => {
     return request({
-        url: "/user/updateUserInfo",
+        url: "/api/user/updateUserInfo",
         method: 'post',
         data: params,
         headers: {

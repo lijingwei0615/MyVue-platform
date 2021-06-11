@@ -2,7 +2,7 @@ import request from '@/utils/request';
 
 export function deleteResource(array) {
     return request({
-        url: '/resource/deleteResource',
+        url: '/api/resource/deleteResource',
         method: 'post',
         data: array
     });
@@ -10,7 +10,7 @@ export function deleteResource(array) {
 
 export function updateResouce(array) {
     return request({
-        url: '/resource/updateResource',
+        url: '/api/resource/updateResource',
         method: 'post',
         data: array
     });
@@ -18,7 +18,7 @@ export function updateResouce(array) {
 
 export function showResource(array) {
     return request({
-        url: '/resource/showResource',
+        url: '/api/resource/showResource',
         method: 'post',
         data: array
     });
@@ -26,7 +26,7 @@ export function showResource(array) {
 
 export function addResource(array) {
     return request({
-        url: '/resource/addResource',
+        url: '/api/resource/addResource',
         method: 'post',
         data: array
     });

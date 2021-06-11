@@ -1,11 +1,14 @@
 <template>
-  <el-form style="width: 60%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
 
-    <el-form-item label="resourceId" prop="id">
+  <el-form style="width: 100%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+    <div class="title">
+      修改数据列表接口
+    </div>
+    <el-form-item label="Id" prop="id">
       <el-input v-model="ruleForm.id"></el-input>
     </el-form-item>
 
-    <el-form-item label="resourceName" prop="name">
+    <el-form-item label="Name" prop="name">
       <el-input v-model="ruleForm.name"></el-input>
     </el-form-item>
 
@@ -76,4 +79,8 @@ export default {
 
 <style scoped>
 
+.title{
+  text-align:center;
+  font-size: 40px;
+}
 </style>

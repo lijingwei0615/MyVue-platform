@@ -2,7 +2,7 @@ import request from '../utils/request'
 
 export const userinfo = (params) => {
     return request({
-        url: "/user/getUserInfo",
+        url: "/api/user/getUserInfo",
         method: 'get',
         data: params,
         headers: {
